@@ -1,20 +1,20 @@
-# OrdernetCLI
+# OrdernetAPI
 
-A simple CLI for querying `https://spark{nesua,meitav,psagot}.ordernet.co.il/api`.  
+A simple tool for querying `https://spark{nesua,meitav,psagot}.ordernet.co.il/api`.  
 Right now only returns total balance for each account.
 
-[![npm version](https://badge.fury.io/js/ordernet-cli.svg)](https://badge.fury.io/js/ordernet-cli)
+[![npm version](https://badge.fury.io/js/ordernet-api.svg)](https://badge.fury.io/js/ordernet-api)
 
 # Installation
 
 ```bash
-npm install -g ordernet-cli
+npm install -g ordernet-api
 ```
 
 # Options
 
 ```console
-$ ordernet-cli -h
+$ ordernet-api -h
 Options:
   -u, --username  Spark Username                                      [required]
   -p, --password  Spark Password                                      [required]
