@@ -1,0 +1,22 @@
+{
+  "name": "ordernet-cli",
+  "version": "1.0.0",
+  "description": "CLI for querying spark{nesua,meitav,psagot}.ordernet.co.il",
+  "main": "main.js",
+  "bin": {
+    "ordernet-cli": "./main.js"
+  },
+  "dependencies": {
+    "axios": "^0.19.2",
+    "yargs": "^15.3.1"
+  },
+  "author": "Assaf Morami <assaf.morami@gmail.com>",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/assafmo/OrdernetCLI.git"
+  },
+  "bugs": {
+    "url": "https://github.com/assafmo/OrdernetCLI/issues"
+  },
+  "license": "MIT"
+}
