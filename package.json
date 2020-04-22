@@ -1,6 +1,6 @@
 {
   "name": "ordernet-cli",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "CLI for querying https://spark{nesua,meitav,psagot}.ordernet.co.il/api",
   "main": "main.js",
   "bin": {
