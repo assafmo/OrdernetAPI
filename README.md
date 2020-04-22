@@ -1,7 +1,7 @@
 # OrdernetCLI
 
 A simple CLI for querying `CLI for querying https://spark{nesua,meitav,psagot}.ordernet.co.il/api`.  
-This probably should not be exposed to end users. :-)
+Right now only returns total balance for each account.
 
 [![npm version](https://badge.fury.io/js/ordernet-cli.svg)](https://badge.fury.io/js/ordernet-cli)
 
