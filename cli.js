@@ -43,7 +43,7 @@ const argv = yargs
   .alias("v", "verbose")
   .describe("v", "Print log messages")
   // global config
-  .wrap(yargs.terminalWidth())
+  // .wrap(yargs.terminalWidth())
   .demandOption(["p", "u", "b"])
   .alias("h", "help")
   .alias("V", "version")

@@ -16,22 +16,26 @@ npm install -g ordernet-api
 ```console
 $ ordernet-api -h
 Options:
-  -u, --user, --username  Username for login into Spark.                                         [string] [required]
-  -p, --pass, --password  Password for login into Spark.                                         [string] [required]
-  -b, --broker            Broker name.                    [string] [required] [choices: "nesua", "meitav", "psagot"]
-  -a, --account-key       Print balance only for these account keys. This is usually much faster. An account key has
-                          the form "ACC_XXX-YYYYYY". You can find it out using the --verbose flag.           [array]
-  -v, --verbose           Print log messages                                                               [boolean]
-  -h, --help              Show help                                                                        [boolean]
-  -V, --version           Show version number                                                              [boolean]
+  -u, --user, --username  Username for login into Spark.     [string] [required]
+  -p, --pass, --password  Password for login into Spark.     [string] [required]
+  -b, --broker            Broker name.
+                      [string] [required] [choices: "nesua", "meitav", "psagot"]
+  -a, --account-key       Print balance only for these account keys. This is
+                          usually much faster. An account key has the form
+                          "ACC_XXX-YYYYYY". You can find it out using the
+                          --verbose flag.                                [array]
+  -v, --verbose           Print log messages                           [boolean]
+  -h, --help              Show help                                    [boolean]
+  -V, --version           Show version number                          [boolean]
 
 Examples:
-  ordernet-api -u 1234 -p abcd -b nesua                       Print the balance for each account associated with
-                                                              this Spark user.
-  ordernet-api -u 1234 -p abcd -a ACC_000-111111 -b nesua     Print the balance only for the account key
-                                                              ACC_000-111111.
-  ordernet-api -u 1234 -p abcd -a ACC_000-111111 -a           Print the balance only for the account keys
-  ACC_000-222222 -b nesua                                     ACC_000-111111 and ACC_000-222222.
+  cli.js -u 1234 -p abcd -b nesua           Print the balance for each account
+                                            associated with this Spark user.
+  cli.js -u 1234 -p abcd -a ACC_000-111111  Print the balance only for the
+  -b nesua                                  account key ACC_000-111111.
+  cli.js -u 1234 -p abcd -a ACC_000-111111  Print the balance only for the
+  -a ACC_000-222222 -b nesua                account keys ACC_000-111111 and
+                                            ACC_000-222222.
 
 For more info visit https://github.com/assafmo/OrdernetAPI
 ```
@@ -45,10 +49,10 @@ For more info visit https://github.com/assafmo/OrdernetAPI
 <dd><p>Authenticate against the Spark system of the broker. This function initializes the <code>apiUrl</code> and <code>authorization</code> fields in the internal config, so that we won&#39;t have to authenticate again for each API call. Uses /api/Auth/Authenticate.</p>
 </dd>
 <dt><a href="#getAccounts">getAccounts()</a> ⇒ <code><a href="#Account">Array.&lt;Account&gt;</a></code></dt>
-<dd><p>Get all the accounts listed under this Spark user. Uses /api/DataProvider/GetStaticData.</p>
+<dd><p>Get all the accounts listed under this Spark user. Uses <code>/api/DataProvider/GetStaticData</code>.</p>
 </dd>
 <dt><a href="#getAccountBalance">getAccountBalance(account)</a> ⇒ <code>number</code></dt>
-<dd><p>Get total balance of an account. Uses /api/Account/GetAccountSecurities.</p>
+<dd><p>Get total balance of an account. Uses <code>/api/Account/GetAccountSecurities</code>.</p>
 </dd>
 <dt><a href="#accountKeyToNumber">accountKeyToNumber(key)</a> ⇒ <code>string</code></dt>
 <dd><p>Convert account key to account number.</p>
@@ -74,13 +78,13 @@ Authenticate against the Spark system of the broker. This function initializes t
 | -------- | ------------------- | ---------------------------------------------------------------------------------------------------------------- |
 | username | <code>string</code> | The Spark username                                                                                               |
 | password | <code>string</code> | The Spark password                                                                                               |
-| broker   | <code>string</code> | Used to get the API URL like this: `https://spark${broker}.ordernet.co.il/api`. E.g. "nesua", "meitav", "psagot" |
+| broker   | <code>string</code> | Used to get the API URL like this: `https://spark${broker}.ordernet.co.il/api`. E.g. `nesua`, `meitav`, `psagot` |
 
 <a name="getAccounts"></a>
 
 ## getAccounts() ⇒ [<code>Array.&lt;Account&gt;</code>](#Account)
 
-Get all the accounts listed under this Spark user. Uses /api/DataProvider/GetStaticData.
+Get all the accounts listed under this Spark user. Uses `/api/DataProvider/GetStaticData`.
 
 **Kind**: global function  
 **Returns**: [<code>Array.&lt;Account&gt;</code>](#Account) - - All accounts listed under this Spark user  
@@ -88,7 +92,7 @@ Get all the accounts listed under this Spark user. Uses /api/DataProvider/GetSta
 
 ## getAccountBalance(account) ⇒ <code>number</code>
 
-Get total balance of an account. Uses /api/Account/GetAccountSecurities.
+Get total balance of an account. Uses `/api/Account/GetAccountSecurities`.
 
 **Kind**: global function  
 **Returns**: <code>number</code> - - Total balance of the account
@@ -106,9 +110,9 @@ Convert account key to account number.
 **Kind**: global function  
 **Returns**: <code>string</code> - - The account number
 
-| Param | Type                | Description                                    |
-| ----- | ------------------- | ---------------------------------------------- |
-| key   | <code>string</code> | The account key for API usage (ACC_XXX-YYYYYY) |
+| Param | Type                | Description                                      |
+| ----- | ------------------- | ------------------------------------------------ |
+| key   | <code>string</code> | The account key for API usage (`ACC_XXX-YYYYYY`) |
 
 <a name="Account"></a>
 
@@ -117,11 +121,11 @@ Convert account key to account number.
 **Kind**: global typedef  
 **Properties**
 
-| Name   | Type                | Description                                    |
-| ------ | ------------------- | ---------------------------------------------- |
-| key    | <code>string</code> | The account key for API usage (ACC_XXX-YYYYYY) |
-| name   | <code>string</code> | The name listed on the account                 |
-| number | <code>number</code> | The account number (YYYYYY)                    |
+| Name   | Type                | Description                                      |
+| ------ | ------------------- | ------------------------------------------------ |
+| key    | <code>string</code> | The account key for API usage (`ACC_XXX-YYYYYY`) |
+| name   | <code>string</code> | The name listed on the account                   |
+| number | <code>number</code> | The account number (`YYYYYY`)                    |
 
 # Refs
 
