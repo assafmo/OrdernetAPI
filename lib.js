@@ -27,7 +27,7 @@ async function authenticate(username, password, broker) {
  * @typedef {Object} Account
  * @property {string} key - The account key for API usage (ACC_XXX-YYYYYY)
  * @property {string} name - The name listed on the account
- * @property {number} number - The account number (XYZ)
+ * @property {number} number - The account number (YYYYYY)
  */
 
 /**

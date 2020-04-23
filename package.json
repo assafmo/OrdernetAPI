@@ -10,6 +10,12 @@
     "axios": "^0.19.2",
     "yargs": "^15.3.1"
   },
+  "devDependencies": {
+    "jsdoc-to-markdown": "^5.0.3"
+  },
+  "scripts": {
+    "gen-api-docs": "jsdoc2md lib.js"
+  },
   "author": "Assaf Morami <assaf.morami@gmail.com>",
   "repository": {
     "type": "git",
