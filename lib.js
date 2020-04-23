@@ -25,7 +25,7 @@ async function authenticate(username, password, broker) {
 
 /**
  * @typedef {Object} Account
- * @property {string} key - The account key for API usage (ACC_000-XYZ)
+ * @property {string} key - The account key for API usage (ACC_XXX-YYYYYY)
  * @property {string} name - The name listed on the account
  * @property {number} number - The account number (XYZ)
  */
@@ -68,9 +68,19 @@ async function getAccountBalance(account) {
   return result.data.a.o;
 }
 
+/**
+ * Convert account key to account number.
+ * @param {string} key - The account key for API usage (ACC_XXX-YYYYYY)
+ * @returns {string} - The account number
+ */
+function accountKeyToNumber(key) {
+  return key.split("-")[1];
+}
+
 module.exports = {
   config,
   authenticate,
   getAccounts,
   getAccountBalance,
+  accountKeyToNumber,
 };
