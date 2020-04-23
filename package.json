@@ -1,6 +1,6 @@
 {
   "name": "ordernet-api",
-  "version": "1.1.2",
+  "version": "1.2.0",
   "description": "Query https://spark{nesua,meitav,psagot}.ordernet.co.il/api",
   "main": "./lib.js",
   "bin": {
