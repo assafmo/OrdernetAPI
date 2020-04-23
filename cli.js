@@ -27,7 +27,7 @@ function info(text) {
 }
 
 (async () => {
-  info("Authenticating...");
+  info(`Authenticating ${argv.broker} with Spark user ${argv.username}...`);
   await lib.authenticate(argv.username, argv.password, argv.broker);
 
   info("Getting account numbers...");
