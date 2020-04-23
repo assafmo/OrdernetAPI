@@ -26,7 +26,7 @@ Options:
 
 Examples:
   ordernet-api -u 1234 --p abcd -b nesua  Prints the balance for each account
-                                    associated with this Spark user.
+                                          associated with this Spark user.
 
 For more info visit https://github.com/assafmo/OrdernetAPI
 ```
