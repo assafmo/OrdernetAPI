@@ -6,11 +6,11 @@ const config = {
 };
 
 /**
- *  Authenticate against the Spark system of the broker. This function initializes the `apiUrl` and `authorization` fields in the internal config, so that we won't have to authenticate again for each API call. Uses /api/Auth/Authenticate.
- *  @param {string} username - The Spark username
- *  @param {string} password - The Spark password
- *  @param {string} broker - Used to get the API URL like this: `https://spark${broker}.ordernet.co.il/api`. E.g. "nesua", "meitav", "psagot"
- *  @returns {Void}
+ * Authenticate against the Spark system of the broker. This function initializes the `apiUrl` and `authorization` fields in the internal config, so that we won't have to authenticate again for each API call. Uses /api/Auth/Authenticate.
+ * @param {string} username - The Spark username
+ * @param {string} password - The Spark password
+ * @param {string} broker - Used to get the API URL like this: `https://spark${broker}.ordernet.co.il/api`. E.g. `nesua`, `meitav`, `psagot`
+ * @returns {Void}
  */
 async function authenticate(username, password, broker) {
   config.apiUrl = `https://spark${broker}.ordernet.co.il/api`;
@@ -25,14 +25,14 @@ async function authenticate(username, password, broker) {
 
 /**
  * @typedef {Object} Account
- * @property {string} key - The account key for API usage (ACC_XXX-YYYYYY)
+ * @property {string} key - The account key for API usage (`ACC_XXX-YYYYYY`)
  * @property {string} name - The name listed on the account
- * @property {number} number - The account number (YYYYYY)
+ * @property {number} number - The account number (`YYYYYY`)
  */
 
 /**
- *  Get all the accounts listed under this Spark user. Uses /api/DataProvider/GetStaticData.
- *  @returns {Array.<Account>} - All accounts listed under this Spark user
+ * Get all the accounts listed under this Spark user. Uses `/api/DataProvider/GetStaticData`.
+ * @returns {Array.<Account>} - All accounts listed under this Spark user
  */
 async function getAccounts() {
   const getStaticDataRes = await axios.get(
@@ -52,9 +52,9 @@ async function getAccounts() {
 }
 
 /**
- *  Get total balance of an account. Uses /api/Account/GetAccountSecurities.
- *  @param {Account} account - Account to get balance for
- *  @returns {number} - Total balance of the account
+ * Get total balance of an account. Uses `/api/Account/GetAccountSecurities`.
+ * @param {Account} account - Account to get balance for
+ * @returns {number} - Total balance of the account
  */
 async function getAccountBalance(account) {
   const result = await axios(
@@ -70,7 +70,7 @@ async function getAccountBalance(account) {
 
 /**
  * Convert account key to account number.
- * @param {string} key - The account key for API usage (ACC_XXX-YYYYYY)
+ * @param {string} key - The account key for API usage (`ACC_XXX-YYYYYY`)
  * @returns {string} - The account number
  */
 function accountKeyToNumber(key) {
