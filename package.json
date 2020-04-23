@@ -2,9 +2,9 @@
   "name": "ordernet-api",
   "version": "1.0.1",
   "description": "Query https://spark{nesua,meitav,psagot}.ordernet.co.il/api",
-  "main": "main.js",
+  "main": "./lib.js",
   "bin": {
-    "ordernet-api": "./main.js"
+    "ordernet-api": "./cli.js"
   },
   "dependencies": {
     "axios": "^0.19.2",
