@@ -2,25 +2,26 @@
 
 const lib = require("./lib.js");
 const argv = require("yargs")
+  .example(
+    "$0 -u 1234 --p abcd -b nesua",
+    "Prints the balance for each account associated with this Spark user."
+  )
   .alias("u", "username")
-  .describe("u", "Spark Username")
+  .alias("u", "user")
+  .describe("u", "Your Spark username")
   .alias("p", "password")
-  .describe("p", "Spark Password")
+  .alias("p", "pass")
+  .describe("p", "Your Spark password")
   .alias("b", "broker")
-  .describe("b", 'Broker. Must be "nesua", "meitav" or "psagot"')
-  .check(function (argv) {
-    return (
-      argv.broker == "nesua" ||
-      argv.broker == "meitav" ||
-      argv.broker == "psagot"
-    );
-  })
+  .describe("b", "Your broker")
+  .choices("b", ["nesua", "meitav", "psagot"])
   .demandOption(["p", "u", "b"])
   .alias("h", "help")
   .alias("V", "version")
   .boolean("verbose")
   .alias("v", "verbose")
-  .describe("v", "Print log messages").argv;
+  .describe("v", "Print log messages")
+  .epilogue("For more info visit https://github.com/assafmo/OrdernetAPI").argv;
 
 function info(text) {
   argv.verbose && console.error(`[${new Date().toJSON()}] [INFO] ${text}`);

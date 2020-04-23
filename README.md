@@ -11,17 +11,24 @@ Right now only returns total balance for each account.
 npm install -g ordernet-api
 ```
 
-# Options
+# CLI Options
 
 ```console
 $ ordernet-api -h
 Options:
-  -u, --username  Spark Username                                      [required]
-  -p, --password  Spark Password                                      [required]
-  -b, --broker    Broker. Must be "nesua", "meitav" or "psagot"       [required]
-  -v, --verbose   Print log messages                                   [boolean]
-  -h, --help      Show help                                            [boolean]
-  -V, --version   Show version number                                  [boolean]
+  -u, --username, --user  Your Spark username                         [required]
+  -p, --password, --pass  Your Spark password                         [required]
+  -b, --broker            Your broker
+                               [required] [choices: "nesua", "meitav", "psagot"]
+  -v, --verbose           Print log messages                           [boolean]
+  -h, --help              Show help                                    [boolean]
+  -V, --version           Show version number                          [boolean]
+
+Examples:
+  ordernet-api -u 1234 --p abcd -b nesua  Prints the balance for each account
+                                    associated with this Spark user.
+
+For more info visit https://github.com/assafmo/OrdernetAPI
 ```
 
 # Refs
