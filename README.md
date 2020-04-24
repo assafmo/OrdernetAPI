@@ -52,11 +52,19 @@ or
 yarn add ordernet-api
 ```
 
+## Constants
+
+<dl>
+<dt><a href="#config">config</a> : <code><a href="#Config">Config</a></code></dt>
+<dd><p>The internal config object.</p>
+</dd>
+</dl>
+
 ## Functions
 
 <dl>
 <dt><a href="#authenticate">authenticate(username, password, broker)</a> ⇒ <code>Void</code></dt>
-<dd><p>Authenticate against the Spark system of the broker. This function initializes the <code>apiUrl</code> and <code>authorization</code> fields in the internal config, so that we won&#39;t have to authenticate again for each API call. Uses /api/Auth/Authenticate.</p>
+<dd><p>Authenticate against the Spark system of the broker. This function must be called first as it initializes the <code>apiUrl</code> and <code>authorization</code> fields in the internal config. That way we won&#39;t need to authenticate again for each API call. Uses <code>/api/Auth/Authenticate</code>.</p>
 </dd>
 <dt><a href="#getAccounts">getAccounts()</a> ⇒ <code><a href="#Account">Array.&lt;Account&gt;</a></code></dt>
 <dd><p>Get all the accounts listed under this Spark user. Uses <code>/api/DataProvider/GetStaticData</code>.</p>
@@ -72,15 +80,24 @@ yarn add ordernet-api
 ## Typedefs
 
 <dl>
+<dt><a href="#Config">Config</a> : <code>Object</code></dt>
+<dd></dd>
 <dt><a href="#Account">Account</a> : <code>Object</code></dt>
 <dd></dd>
 </dl>
 
+<a name="config"></a>
+
+## config : [<code>Config</code>](#Config)
+
+The internal config object.
+
+**Kind**: global constant  
 <a name="authenticate"></a>
 
 ## authenticate(username, password, broker) ⇒ <code>Void</code>
 
-Authenticate against the Spark system of the broker. This function initializes the `apiUrl` and `authorization` fields in the internal config, so that we won't have to authenticate again for each API call. Uses /api/Auth/Authenticate.
+Authenticate against the Spark system of the broker. This function must be called first as it initializes the `apiUrl` and `authorization` fields in the internal config. That way we won't need to authenticate again for each API call. Uses `/api/Auth/Authenticate`.
 
 **Kind**: global function
 
@@ -123,6 +140,18 @@ Convert account key to account number.
 | Param | Type                | Description                                      |
 | ----- | ------------------- | ------------------------------------------------ |
 | key   | <code>string</code> | The account key for API usage (`ACC_XXX-YYYYYY`) |
+
+<a name="Config"></a>
+
+## Config : <code>Object</code>
+
+**Kind**: global typedef  
+**Properties**
+
+| Name          | Type                | Description                                                                                                                                                                     |
+| ------------- | ------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| apiUrl        | <code>string</code> | The API URL to send requests to. Probably one of `https://sparknesua.ordernet.co.il/api`, `https://sparkmeitav.ordernet.co.il/api` or `https://sparkpsagot.ordernet.co.il/api`. |
+| authorization | <code>string</code> | The bearer token to pass for authentication in each API call                                                                                                                    |
 
 <a name="Account"></a>
 

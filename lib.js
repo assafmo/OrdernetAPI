@@ -1,12 +1,22 @@
 const axios = require("axios");
 
+/**
+ * @typedef {Object} Config
+ * @property {string} apiUrl - The API URL to send requests to. Probably one of `https://sparknesua.ordernet.co.il/api`, `https://sparkmeitav.ordernet.co.il/api` or `https://sparkpsagot.ordernet.co.il/api`.
+ * @property {string} authorization - The bearer token to pass for authentication in each API call
+ */
+
+/**
+ * The internal config object.
+ * @type {Config}
+ */
 const config = {
   apiUrl: null,
   authorization: null,
 };
 
 /**
- * Authenticate against the Spark system of the broker. This function initializes the `apiUrl` and `authorization` fields in the internal config, so that we won't have to authenticate again for each API call. Uses /api/Auth/Authenticate.
+ * Authenticate against the Spark system of the broker. This function must be called first as it initializes the `apiUrl` and `authorization` fields in the internal config. That way we won't need to authenticate again for each API call. Uses `/api/Auth/Authenticate`.
  * @param {string} username - The Spark username
  * @param {string} password - The Spark password
  * @param {string} broker - Used to get the API URL like this: `https://spark${broker}.ordernet.co.il/api`. E.g. `nesua`, `meitav`, `psagot`
