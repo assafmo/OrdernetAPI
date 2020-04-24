@@ -5,13 +5,13 @@ Right now only returns total balance for each account.
 
 [![npm version](https://badge.fury.io/js/ordernet-api.svg)](https://badge.fury.io/js/ordernet-api)
 
-# Installation
+# CLI
 
 ```bash
 npm install -g ordernet-api
 ```
 
-# CLI Options
+## Options
 
 ```console
 $ ordernet-api -h
@@ -41,6 +41,16 @@ For more info visit https://github.com/assafmo/OrdernetAPI
 ```
 
 # Library API
+
+```bash
+npm install ordernet-api
+```
+
+or
+
+```bash
+yarn add ordernet-api
+```
 
 ## Functions
 
