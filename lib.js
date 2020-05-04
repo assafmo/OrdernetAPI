@@ -49,7 +49,7 @@ async function getAccounts() {
     `${config.apiUrl}/DataProvider/GetStaticData`,
     {
       headers: {
-        authorization: config.authorization,
+        Authorization: config.authorization,
       },
     }
   );
@@ -71,7 +71,7 @@ async function getAccountBalance(account) {
     `${config.apiUrl}/Account/GetAccountSecurities?accountKey=${account.key}`,
     {
       headers: {
-        authorization: config.authorization,
+        Authorization: config.authorization,
       },
     }
   );
